@@ -11,15 +11,19 @@ function App() {
   let [phones, setPhones] = useState([]);
   let [search, setSearch] = useState([]);
   let [shown, setShown] = useState(5);
-
+  let [found, setFound] = useState(true);
   const searchHandler = ()=> {
     console.log(search);
     setPhones([]);
+    setFound(true);
     let url = 'https://openapi.programming-hero.com/api/phones?search='+search;
     fetch(url)
     .then((res) => res.json())
     .then(data => {
       setPhones(data.data);
+      if(data.data.length === 0) {
+        setFound(false);
+      }
       if(data.data.length < 6) {
         setShown(10);
       } else {
@@ -46,7 +50,7 @@ function App() {
   return <div className="md:w-3/4 mx-auto space-y-4">
     <data.Provider value={{phones, setPhones, searchHandler, search, setSearch, shown, setShown}}>
       <Search/>
-      {phones.length > 0 ? <Cards/> : <Loading/>}
+      {phones.length > 0 ? <Cards/> : found ? <Loading/> : <h1 className="text-3xl font-bold">Item not found</h1>}
       {shown <= 5 && <ShowAll/>}
     </data.Provider>
   </div>
