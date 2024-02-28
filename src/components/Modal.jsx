@@ -23,7 +23,7 @@ const Modal = ({id}) => {
           detailHandler();
           document.getElementById(id).showModal();
           
-          }}>open modal</button>
+          }}>Details</button>
         <dialog id={id} className="modal">
           <div className="modal-box md:w-1/2 max-w-7xl max-h-screen">
             {detail.name ? 
@@ -39,6 +39,8 @@ const Modal = ({id}) => {
                   <div className='w-full flex items-center text-lg'><h3 className="font-bold">GPS:</h3><span>{detail.others?.GPS}</span></div>
                   <div className='w-full flex items-center text-lg'><h3 className="font-bold">Bluetooth:</h3><span>{detail.others?.Bluetooth}</span></div>
                   <div className='w-full flex items-center text-lg'><h3 className="font-bold">USB:</h3><span>{detail.others?.USB}</span></div>
+                  <div className='w-full flex items-center text-lg'><h3 className="font-bold">Sensors:</h3><span>
+                    {detail.mainFeatures?.sensors.join(', ')}</span></div>
                 </div>
              
                 
