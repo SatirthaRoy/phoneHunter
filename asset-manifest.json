@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/phoneHunter/static/js/main.5c763888.js",
+    "main.js": "/phoneHunter/static/js/main.f6352311.js",
     "index.html": "/phoneHunter/index.html",
-    "main.5c763888.js.map": "/phoneHunter/static/js/main.5c763888.js.map"
+    "main.f6352311.js.map": "/phoneHunter/static/js/main.f6352311.js.map"
   },
   "entrypoints": [
-    "static/js/main.5c763888.js"
+    "static/js/main.f6352311.js"
   ]
 }
